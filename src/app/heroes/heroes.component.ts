@@ -17,17 +17,27 @@ export class HeroesComponent implements OnInit {
     name: ''
   };
 
+gitdata = {
+  id: null,
+  bio: null,
+  login: null,
+}
+
 submitted = false;
 
 submitForm = form => {
+  console.log(form);
    this.submitted = true;
 
 
-  this.http.get('https://api.github.com/users/form.value.title').subscribe(data =>
+  this.http.get(`https://api.github.com/users/${form.value.login}`).subscribe(data => {
+    console.log(data);
     this.gitdata = {
+      login: data.login,
    id: data.id,
    bio: data.bio,
- });
+ };
+});
 }
 
 
