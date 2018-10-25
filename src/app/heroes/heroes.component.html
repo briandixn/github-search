@@ -1,0 +1,26 @@
+
+<h2>type your github username below to get started.</h2>
+<h2>{{hero.name | uppercase}} </h2>
+<h2>{{gitdata.id}}</h2>
+<h2>{{gitdata.bio}}</h2>
+<div>
+
+  <!--<section class="submit-user">
+
+<form #noteForm="ngForm" id="note-edit-form" (ngSubmit)="submitForm(noteForm)">
+      <input [(ngModel)]="title" placeholder="title" name="title" #title="ngModel" />
+
+      <button type="submit" [disabled]="!noteForm.form.valid">save</button>
+</form>
+</section>
+</div>-->
+
+
+<section class="new-note">
+
+<form #noteForm="ngForm" id="note-edit-form" (ngSubmit)="submitForm(noteForm)">
+      <input [(ngModel)]="note.title" placeholder="title" name="title" #title="ngModel" required/>
+
+      <button type="submit" [disabled]="!noteForm.form.valid">save</button>
+</form>
+</section>
